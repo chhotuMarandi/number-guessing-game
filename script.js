@@ -1,6 +1,7 @@
 const correctNumber = Math.floor(Math.random() * (10-1+1) + 1);
 let userGuess;
 let attempts = 0;
+let winningPoints = 10;
 
 // console.log(correctNumber)
 
@@ -21,7 +22,9 @@ const guessNumber = () => {
     
   } while (userGuess != correctNumber);
 
-  alert(attempts + "attempts");
+  alert(`you take ${attempts} attempts`);
+  const guessPoints = winningPoints - attempts;
+  alert(`Your Points - ${guessPoints}`);
 
 }
 

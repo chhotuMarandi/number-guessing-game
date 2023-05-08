@@ -1,7 +1,12 @@
 const randomNumber = Math.floor(Math.random() * (10-1+1) + 1);
+let userGuess;
 
-const userGuess = prompt("guess number");
+console.log(randomNumber)
+do {
+  userGuess = prompt("guess number");
+  console.log(randomNumber);
+  console.log(userGuess)
+} while (userGuess != randomNumber)
 
-if (userGuess === randomNumber) {
- console.log("congratulation")
-}
+
+// console.log(randomNumber)

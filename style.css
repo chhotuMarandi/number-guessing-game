@@ -33,6 +33,21 @@ body {
   text-align: center;
 }
 
+.user-points {
+  background-color: blue;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.box {
+  width: 30%;
+  background-color: cyan;
+  height: 20%;
+}
+
 .grid {
   background-color: black;
   width: 100%;

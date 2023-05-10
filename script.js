@@ -2,21 +2,23 @@ const displayPoints = document.querySelector(".points-container");
 
 const displayAttempts = document.querySelector(".attempts-container");
 
-const startBtn = document.getElementById("start");
-console.log(startBtn);
+// const startBtn = document.getElementById("start");
+// console.log(startBtn);
+
+const buttons = document.querySelectorAll(".buttons");
+console.log(buttons);
+
+buttons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    console.log(e.currentTarget);
+  });
+});
 
 const mainDisplay = document.querySelector(".mainDisplay");
-
-// console.log((mainDisplay.innerHTML = "heio"));
-
-// console.log((displayAttempts.textContent = "hi"));
-// console.log((displayPoints.textContent = "hi"));
 
 let userGuess;
 let attempts = 0;
 let winningPoints = 10;
-
-// const correctNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
 
 const guessNumber = () => {
   const correctNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
@@ -28,9 +30,9 @@ const guessNumber = () => {
     if (correctNumber < userGuess) {
       mainDisplay.innerHTML = "number is less than entered number";
     } else if (correctNumber > userGuess) {
-      alert("number is greater than entered number ");
+      mainDisplay.innerHTML = "number is greater than entered number ";
     } else {
-      alert("congratulation you are correct");
+      mainDisplay.innerHTML = "congratulation you are correct";
     }
 
     attempts++;
@@ -41,5 +43,5 @@ const guessNumber = () => {
   alert(`Your Points - ${guessPoints}`);
 };
 
-startBtn.addEventListener("click", guessNumber);
+// startBtn.addEventListener("click", guessNumber);
 // guessNumber();

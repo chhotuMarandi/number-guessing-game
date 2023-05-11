@@ -18,6 +18,19 @@ buttons.forEach((btn) => {
 
     const correctNumber = randomNumber;
     const userGuessedNumber = Number(userGuess);
+
+    do {
+      showText.innerHTML = "guess number";
+      if (correctNumber < userGuessedNumber) {
+        showText.innerHTML = "number is less than entered number";
+      } else if (correctNumber > userGuessedNumber) {
+        showText.innerHTML = "number is greater than entered number ";
+      } else {
+        showText.innerHTML = "congratulation you are correct";
+      }
+
+      attempts++;
+    } while (userGuess != correctNumber);
   });
 });
 

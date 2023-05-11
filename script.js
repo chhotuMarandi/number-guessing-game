@@ -7,11 +7,17 @@ const buttons = document.querySelectorAll(".buttons");
 
 const showText = document.querySelector("#showText");
 
+const randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
+
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const userGuess = e.target.id;
-    const showPressdBtn = showText;
-    showPressdBtn.innerHTML = userGuess;
+    // console.log(userGuess);
+    const pressedBtn = showText;
+    pressedBtn.innerHTML = userGuess;
+
+    const correctNumber = randomNumber;
+    const userGuessedNumber = Number(userGuess);
   });
 });
 

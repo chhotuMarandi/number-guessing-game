@@ -14,14 +14,19 @@ showText.innerHTML = "guess number";
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const userGuess = e.target.id;
-    // console.log(userGuess);
-    const pressedBtn = showText;
-    pressedBtn.innerHTML = userGuess;
 
     const correctNumber = randomNumber;
     const userGuessedNumber = Number(userGuess);
 
-    guessNumber(correctNumber, userGuessedNumber);
+    showText.innerHTML = userGuessedNumber;
+    // console.log(userGuessedNumber);
+    // console.log(userGuess);
+
+    setTimeout(() => {
+      guessNumber(correctNumber, userGuessedNumber);
+    }, 3000);
+
+    // guessNumber(correctNumber, userGuessedNumber);
   });
 });
 

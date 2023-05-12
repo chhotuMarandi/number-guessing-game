@@ -9,6 +9,8 @@ const showText = document.querySelector("#showText");
 
 const randomNumber = Math.floor(Math.random() * (10 - 1 + 1) + 1);
 
+showText.innerHTML = "guess number";
+
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const userGuess = e.target.id;
@@ -19,21 +21,23 @@ buttons.forEach((btn) => {
     const correctNumber = randomNumber;
     const userGuessedNumber = Number(userGuess);
 
-    do {
-      showText.innerHTML = "guess number";
-      if (correctNumber < userGuessedNumber) {
-        showText.innerHTML = "number is less than entered number";
-      } else if (correctNumber > userGuessedNumber) {
-        showText.innerHTML = "number is greater than entered number ";
-      } else {
-        showText.innerHTML = "congratulation you are correct";
-      }
-
-      attempts++;
-    } while (userGuess != correctNumber);
+    guessNumber(correctNumber, userGuessedNumber);
   });
 });
 
+function guessNumber(correctNumber, userGuessedNumber) {
+  do {
+    if (correctNumber < userGuessedNumber) {
+      showText.innerHTML = "number is less than entered number";
+    } else if (correctNumber > userGuessedNumber) {
+      showText.innerHTML = "number is greater than entered number ";
+    } else {
+      showText.innerHTML = "congratulation you are correct";
+    }
+
+    // attempts++;
+  } while (userGuess != correctNumber);
+}
 // // let userGuess;
 // let attempts = 0;
 // let winningPoints = 10;

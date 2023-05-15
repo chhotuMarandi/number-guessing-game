@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-  background-color: red;
+  background-color: #313d54;
   width: 420px;
   height: 700px;
   display: flex;
@@ -96,6 +96,7 @@ body {
 }
 
 .mainDisplay #showText {
+  text-align: center;
   font-size: 2rem;
   color: #fff;
 }

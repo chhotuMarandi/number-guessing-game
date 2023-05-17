@@ -4,6 +4,9 @@ const displayAttempts = document.querySelector(".attempts-container");
 
 let attemptesBox = document.querySelector(".attempts-container");
 
+const pointsBox = document.querySelector(".points-container");
+// console.log((pointsBox.innerHTML = " hi"));
+
 const reset = document.querySelector("#reset");
 
 const buttons = document.querySelectorAll(".buttons");
@@ -38,17 +41,21 @@ buttons.forEach((btn) => {
 });
 
 let attempts = 0;
+let winnigPoints = 10;
+
 const guessNumber = (correctNumber, userGuessedNumber) => {
+  attempts++;
+  const earnPoints = winnigPoints - attempts;
+
   if (correctNumber < userGuessedNumber) {
     showText.innerHTML = "number is less than entered number";
   } else if (correctNumber > userGuessedNumber) {
     showText.innerHTML = "number is greater than entered number ";
   } else {
     showText.innerHTML = "congratulation you are correct";
+    attemptesBox.innerHTML = attempts;
+    pointsBox.innerHTML = earnPoints;
   }
-  attempts++;
-  attemptesBox.innerHTML = attempts;
-  console.log(attempts);
 };
 
 // console.log(attempts);
